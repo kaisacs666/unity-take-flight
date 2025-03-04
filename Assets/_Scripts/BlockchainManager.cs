@@ -47,7 +47,7 @@ public class BlockchainManager : MonoBehaviour
 
         var connection = new WalletOptions(
             provider: WalletProvider.InAppWallet,
-            chainId: 421614,
+            chainId: 10143,
             inAppWalletOptions: new InAppWalletOptions(authprovider: provider),
             smartWalletOptions: new SmartWalletOptions(sponsorGas: true)
         );
