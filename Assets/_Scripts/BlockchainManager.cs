@@ -62,8 +62,8 @@ public class BlockchainManager : MonoBehaviour
     {
         Debug.Log($"Submitting score of {distanceTravelled} to blockchain for address {Address}");
         var contract = await ThirdwebManager.Instance.GetContract(
-            "0x9d9a1f4c1a685857a5666db45588aa3d5643af9f",
-            421614,
+            "0x22324302c5c684d6763e63CdBbB41ABbD5dF38D0",
+            10143,
             "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"score\",\"type\":\"uint256\"}],\"name\":\"ScoreAdded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"getRank\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"rank\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"score\",\"type\":\"uint256\"}],\"name\":\"submitScore\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
         );
         await contract.Write(Wallet, "submitScore", 0, (int)distanceTravelled);
@@ -72,8 +72,8 @@ public class BlockchainManager : MonoBehaviour
     internal async Task<int> GetRank()
     {
         var contract = await ThirdwebManager.Instance.GetContract(
-            "0x9d9a1f4c1a685857a5666db45588aa3d5643af9f",
-            421614,
+            "0x22324302c5c684d6763e63CdBbB41ABbD5dF38D0",
+            10143,
             "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"score\",\"type\":\"uint256\"}],\"name\":\"ScoreAdded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"getRank\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"rank\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"score\",\"type\":\"uint256\"}],\"name\":\"submitScore\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
         );
         var rank = await contract.Read<int>("getRank", Address);
