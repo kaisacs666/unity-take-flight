@@ -54,7 +54,7 @@ public class BlockchainManager : MonoBehaviour
 
         Wallet = await ThirdwebManager.Instance.ConnectWallet(connection);
         Address = await Wallet.GetAddress();
-
+        Debug.Log($"Login  address  is {Address}");
         OnLoggedIn?.Invoke(Address);
     }
 
