@@ -212,7 +212,7 @@ namespace Thirdweb.Unity
                 }
             );
 
-            ThirdwebDebug.Log("ThirdwebManager initialized.");
+            ThirdwebDebug.Log("ThirdwebManager initialized.work!");
             ThirdwebDebug.Log($"Client: {Client}");
 
             _walletMapping = new Dictionary<string, IThirdwebWallet>();
