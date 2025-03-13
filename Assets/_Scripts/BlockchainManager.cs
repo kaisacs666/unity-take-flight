@@ -76,8 +76,11 @@ public class BlockchainManager : MonoBehaviour
             10143,
             "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"score\",\"type\":\"uint256\"}],\"name\":\"ScoreAdded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"getRank\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"rank\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"score\",\"type\":\"uint256\"}],\"name\":\"submitScore\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
         );
+        var address = await Wallet.GetAddress();
+        var strcontract = await contract.GetContract().GetContractAddress();
         var rank = await contract.Read<int>("getRank", Address);
         Debug.Log($"Rank for address {Address} is {rank}");
+        Debug.Log($"Contract address is {strcontract}");
         return rank;
     }
 }
