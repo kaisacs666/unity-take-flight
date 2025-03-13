@@ -212,8 +212,8 @@ namespace Thirdweb.Unity
                 }
             );
 
-            var cid = ClientId;
-            ThirdwebDebug.Log($"ThirdwebManager initialized.{cid}");
+            ThirdwebDebug.Log("ThirdwebManager initialized.");
+            ThirdwebDebug.Log($"Client: {Client}");
 
             _walletMapping = new Dictionary<string, IThirdwebWallet>();
 
