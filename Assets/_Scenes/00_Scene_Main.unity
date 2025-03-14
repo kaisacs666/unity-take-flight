@@ -1278,7 +1278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1288923049808236541, guid: f1f7a02a8c5efe54c95062bd90592227, type: 3}
       propertyPath: <BundleId>k__BackingField
-      value: com.unity.takeflight
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1288923049808236541, guid: f1f7a02a8c5efe54c95062bd90592227, type: 3}
       propertyPath: <ClientId>k__BackingField
